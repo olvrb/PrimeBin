@@ -18,12 +18,13 @@ namespace PrimeBin {
 
         public static async void CheckPrime(BigInteger number, StreamWriter file) {
             if (await IsPrime(number)) {
-                file.WriteLine(number);
+                Console.WriteLine(number);
+                //file.WriteLine(number);
             }
         }
 
         public static async Task<bool> IsPrime(BigInteger number) {
-            double boundary = Math.Floor((double)sqrt(number));
+            double boundary = Math.Floor(Math.Pow(Math.E, BigInteger.Log(number) / 2));
 
             for (int i = 3; i <= boundary; i += 2) {
                 if (number % i == 0) {
