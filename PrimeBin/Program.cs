@@ -18,8 +18,7 @@ namespace PrimeBin {
 
         public static async void CheckPrime(BigInteger number, StreamWriter file) {
             if (await IsPrime(number)) {
-                Console.WriteLine(number);
-                //file.WriteLine(number);
+                file.WriteLine(number);
             }
         }
 
